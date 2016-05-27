@@ -472,7 +472,9 @@
     function extractHashData() {
         // first char is the # or #!
         var href;
-        if (window.location.hash.startsWith('#!')) {
+        if (window.location.hash === '') {
+            href = 'index.md';
+        } else if (window.location.hash.startsWith('#!')) {
             href = window.location.hash.substring(2);
         } else {
             href = window.location.hash.substring(1);
@@ -503,7 +505,7 @@
                 ) {
             newHashString = currentHashString + 'index.md';
         }
-        if (newHashString)
+        if (newHashString && !newHashString.endsWith('index.md'))
             window.location.hash = newHashString;
     }
 
