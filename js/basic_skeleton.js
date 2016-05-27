@@ -35,6 +35,9 @@
             $('#md-title').prepend($pageTitle);
             var title = $pageTitle.toptext();
             // document.title = title;
+            if ($.md.config.title)
+              title += ' | ' + $.md.config.title;
+            $('title').text(title);
         } else {
             $('#md-title').remove();
         }
