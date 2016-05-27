@@ -703,6 +703,9 @@ InlineLexer.prototype.outputLink = function(cap, link) {
       + escape(link.title)
       + '"'
       : '')
+      + (/^http/.test(cap[2])
+      ? ' target="_blank"'
+      : '')
       + '>'
       + this.output(cap[1])
       + '</a>';
