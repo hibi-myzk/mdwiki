@@ -404,6 +404,11 @@
 
         $.md.stage('ready').subscribe(function(done) {
             $.md('createBasicSkeleton');
+
+            if ($.md.baseUrl.match(/column/)) {
+              $('#md-body').addClass('column');
+            }
+
             done();
         });
 
